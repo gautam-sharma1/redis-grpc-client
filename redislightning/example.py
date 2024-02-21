@@ -32,7 +32,7 @@ import redislightning as redislightning
 
 
 def run():
-    c = redislightning.RedisLightningClient(50051)
+    c = redislightning.Client(50051)
     c.init_connection()
     for idx in range(1,10):
         k = input("Set Key ")

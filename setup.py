@@ -23,19 +23,25 @@
 #   */
 
 from setuptools import setup, find_packages
+# read the contents of your README file
+from pathlib import Path
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='redislightning',
-    version='0.1',
+    version='0.2',
     packages=find_packages(),
     description='A small production ready client library that emulates redis and used gRPC for communication',
     author='Gautam Sharma',
     install_requires=[
         'grpcio-tools'
     ],
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     keywords=['redis', 'gRPC'],
     author_email='gautamsharma2813@gmail.com',
-    url='https://github.com/gautam-sharma1/redis-lightning',
+    url='https://github.com/gautam-sharma1/redislightning',
     classifiers=[
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
