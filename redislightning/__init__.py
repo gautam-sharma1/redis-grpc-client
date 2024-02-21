@@ -22,27 +22,10 @@
 #   * SOFTWARE.
 #   */
 
-#
-# Created by Gautam Sharma on 2/19/24.
-#
+# Import necessary modules/classes from your package
 
-from __future__ import print_function
-import logging
-import redislite as redislite
+# Optionally, you can define __all__ to specify what gets imported when using 'from package import *'
+__all__ = ['redislightning.py']
 
-
-def run():
-    c = redislite.RedisLiteClient(50051)
-    c.init_connection()
-    for idx in range(1,10):
-        k = input("Set Key ")
-        v = input("Set Value ")
-        c.set(k, v)
-        cached_val = c.get(k)
-        print("Cached value of key {} is {}".format(k, cached_val))
-
-
-
-if __name__ == "__main__":
-    logging.basicConfig()
-    run()
+# Optionally, if you want to specify the version of your package
+__version__ = '1.0.0'

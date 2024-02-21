@@ -25,14 +25,20 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='redislite',
+    name='redislightning',
     version='0.1',
     packages=find_packages(),
-    description='A small production ready client library that emulates redis',
+    description='A small production ready client library that emulates redis and used gRPC for communication',
     author='Gautam Sharma',
+    install_requires=[
+        'grpcio-tools'
+    ],
+    keywords=['redis', 'gRPC'],
     author_email='gautamsharma2813@gmail.com',
-    url='https://github.com/gautam-sharma1/redislite',
+    url='https://github.com/gautam-sharma1/redis-lightning',
     classifiers=[
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Build Tools',
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',

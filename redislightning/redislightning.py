@@ -28,10 +28,10 @@
 
 
 import grpc
-import redislite_pb2 as redislite_pb2
-import redislite_pb2_grpc as redislite_pb2_grpc
+import redislightning.redislite_pb2 as redislite_pb2
+import redislightning.redislite_pb2_grpc as redislite_pb2_grpc
 
-class RedisLiteClient:
+class Client:
     def __init__(self, port):
         self.port = port
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/redislite.iml" filepath="$PROJECT_DIR$/.idea/redislite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../redislightning/.idea/redislite.iml" filepath="$PROJECT_DIR$/../redislightning/.idea/redislite.iml" />
     </modules>
   </component>
 </project>

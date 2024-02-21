@@ -28,11 +28,11 @@
 
 from __future__ import print_function
 import logging
-import redislite as redislite
+import redislightning as redislightning
 
 
 def run():
-    c = redislite.RedisLiteClient(50051)
+    c = redislightning.RedisLightningClient(50051)
     c.init_connection()
     for idx in range(1,10):
         k = input("Set Key ")

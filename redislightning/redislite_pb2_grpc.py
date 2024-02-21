@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import redislite_pb2 as redislite__pb2
+import redislightning.redislite_pb2 as redislite__pb2
 
 
 class RedisLiteServerStub(object):
