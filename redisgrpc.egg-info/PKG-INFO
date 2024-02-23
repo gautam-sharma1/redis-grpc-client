@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: redisgrpc
-Version: 0.2
+Version: 0.3
 Summary: A small production ready client library that emulates redis and used gRPC for communication
 Home-page: https://github.com/gautam-sharma1/redisgrpc
 Author: Gautam Sharma
@@ -35,7 +35,7 @@ Redis gRPC ⚡️ is a client library that emulates Redis-like features by lever
 To install the redisgrpc Python client library, you can use pip:
 
 ```bash
-pip install  redisgrpc==0.1
+pip install  redisgrpc==0.2
 ```
 
 ## Usage
@@ -83,4 +83,5 @@ Contributions to redisgrpc are welcome! Whether it's reporting bugs, suggesting 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+
 .

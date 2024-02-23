@@ -18,7 +18,7 @@ Redis gRPC ⚡️ is a client library that emulates Redis-like features by lever
 To install the redisgrpc Python client library, you can use pip:
 
 ```bash
-pip install  redisgrpc==0.1
+pip install  redisgrpc==0.3
 ```
 
 ## Usage
@@ -66,4 +66,5 @@ Contributions to redisgrpc are welcome! Whether it's reporting bugs, suggesting 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+
 .
