@@ -28,8 +28,8 @@
 
 
 import grpc
-import redislightning.redislite_pb2 as redislite_pb2
-import redislightning.redislite_pb2_grpc as redislite_pb2_grpc
+import redisgrpc.redisgrpc_pb2 as redisgrpc_pb2
+import redisgrpc.redisgrpc_pb2_grpc as redisgrpc_pb2_grpc
 
 class Client:
     def __init__(self, port):
@@ -38,9 +38,8 @@ class Client:
     def init_connection(self):
         with grpc.insecure_channel("localhost:{}".format(self.port)) as channel:
             try:
-                stub = redislite_pb2_grpc.RedisLiteServerStub(channel)
-                # Generate random strings 200 times
-                response = stub.InitConnection(redislite_pb2.InitRequest(connection_id="0.0.0.0:{}".format(self.port)))
+                stub = redisgrpc_pb2_grpc.RedisGrpcServerStub(channel)
+                response = stub.InitConnection(redisgrpc_pb2.InitRequest(connection_id="0.0.0.0:{}".format(self.port)))
                 print("redis client status: " + response.status)
             except:
                 print("Server not started");
@@ -49,9 +48,8 @@ class Client:
     def set(self, key, value):
         with grpc.insecure_channel("localhost:{}".format(self.port)) as channel:
             try:
-                stub = redislite_pb2_grpc.RedisLiteServerStub(channel)
-                # Generate random strings 200 times
-                response = stub.Set(redislite_pb2.SetRequest(key=key, value=value))
+                stub = redisgrpc_pb2_grpc.RedisGrpcServerStub(channel)
+                response = stub.Set(redisgrpc_pb2.SetRequest(key=key, value=value))
                 print("redis client status: " + response.status)
             except:
                 print("Server not started");
@@ -60,9 +58,8 @@ class Client:
     def get(self, key):
         with grpc.insecure_channel("localhost:{}".format(self.port)) as channel:
             try:
-                stub = redislite_pb2_grpc.RedisLiteServerStub(channel)
-                # Generate random strings 200 times
-                response = stub.Get(redislite_pb2.GetRequest(key=key))
+                stub = redisgrpc_pb2_grpc.RedisGrpcServerStub(channel)
+                response = stub.Get(redisgrpc_pb2.GetRequest(key=key))
                 print("redis client status: " + response.status)
                 if(response.status == "REDISLITE_OK"):
                     print("Got value " + response.status)

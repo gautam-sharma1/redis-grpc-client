@@ -28,21 +28,42 @@
 
 from __future__ import print_function
 import logging
-import redislightning as redislightning
+from  redisgrpc import redisgrpc as rg
+import random
+import string
+import time
+
+def generate_random_key(length=10):
+    """Generate a random string key."""
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+
+def generate_random_value(length=10):
+    """Generate a random string value."""
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+
+def generate_random_data(num_items):
+    """Generate random key-value pairs."""
+    data = {}
+    for _ in range(num_items):
+        key = generate_random_key()
+        value = generate_random_value()
+        data[key] = value
+    return data
 
 
-def run():
-    c = redislightning.Client(50051)
+def runRedisGrpc(random_data):
+    c = rg.Client(50051)
     c.init_connection()
-    for idx in range(1,10):
-        k = input("Set Key ")
-        v = input("Set Value ")
+    for k,v in random_data.items():
         c.set(k, v)
         cached_val = c.get(k)
-        print("Cached value of key {} is {}".format(k, cached_val))
-
-
 
 if __name__ == "__main__":
-    logging.basicConfig()
-    run()
+    num_items = 1000
+    random_data = generate_random_data(num_items)
+
+    # Run RedisGrpc with 1000 items
+    start_time = time.time()
+    runRedisGrpc(random_data)
+    end_time = time.time()
+    print("RedisGrpc took: {}s".format(end_time- start_time))

@@ -1,10 +1,10 @@
 ---
 
-# RedisLightning 🔥
+# Redis gRPC ⚡️
 
 by Gautam Sharma https://gsharma.dev
 
-RedisLightning 🔥 is a client library that emulates Redis-like features by leveraging gRPC communication. It provides a lightweight and efficient way to interact with a Redis-like server implemented using gRPC, offering developers a fast and seamless experience.
+Redis gRPC ⚡️ is a client library that emulates Redis-like features by leveraging gRPC communication. It provides a lightweight and efficient way to interact with a Redis-like server implemented using gRPC, offering developers a fast and seamless experience.
 
 ## Features
 
@@ -15,25 +15,25 @@ RedisLightning 🔥 is a client library that emulates Redis-like features by lev
 
 ## Installation
 
-To install the redislightning Python client library, you can use pip:
+To install the redisgrpc Python client library, you can use pip:
 
 ```bash
-pip install redislightning==0.1
+pip install  redisgrpc==0.1
 ```
 
 ## Usage
 
-Here's an example demonstrating how to use the redislightning client library:
+Here's an example demonstrating how to use the  redisgrpc client library:
 
 ```python
 from __future__ import print_function
 import logging
-from redislightning import redislightning as rl
+from  redisgrpc import redisgrpc as rg
 
 
 def run():
     # Initialize the Client with the server port
-    c = rl.Client(50051)
+    c = rg.Client(50051)
     # Initialize the connection
     c.init_connection()
     
@@ -55,11 +55,11 @@ if __name__ == "__main__":
 
 ## About
 
-The redislightning-server is a library written purely in C++, utilizing gRPC as its communication layer. Despite its small size, this library is powerful and suitable for use in production environments. The aim is to provide developers with the best possible experience while maintaining extreme speed and efficiency.
+The redisgrpc-server is a library written purely in C++, utilizing gRPC as its communication layer. Despite its small size, this library is powerful and suitable for use in production environments. The aim is to provide developers with the best possible experience while maintaining extreme speed and efficiency.
 
 ## Contributing
 
-Contributions to redislightning are welcome! Whether it's reporting bugs, suggesting new features, or contributing code, your input is valuable.
+Contributions to redisgrpc are welcome! Whether it's reporting bugs, suggesting new features, or contributing code, your input is valuable.
 
 ## License
 

@@ -2,19 +2,11 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import redislightning.redislite_pb2 as redislite__pb2
+import redisgrpc.redisgrpc_pb2 as redisgrpc__pb2
 
 
-class RedisLiteServerStub(object):
-    """The greeting service definition.
-    service Greeter {
-    // Sends a greeting
-    rpc SayHello (HelloRequest) returns (HelloReply) {}
-    // Sends another greeting
-    rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
-    }
-
-    """
+class RedisGrpcServerStub(object):
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -23,32 +15,24 @@ class RedisLiteServerStub(object):
             channel: A grpc.Channel.
         """
         self.InitConnection = channel.unary_unary(
-                '/redislite.RedisLiteServer/InitConnection',
-                request_serializer=redislite__pb2.InitRequest.SerializeToString,
-                response_deserializer=redislite__pb2.InitReply.FromString,
+                '/redisgrpc.RedisGrpcServer/InitConnection',
+                request_serializer=redisgrpc__pb2.InitRequest.SerializeToString,
+                response_deserializer=redisgrpc__pb2.InitReply.FromString,
                 )
         self.Set = channel.unary_unary(
-                '/redislite.RedisLiteServer/Set',
-                request_serializer=redislite__pb2.SetRequest.SerializeToString,
-                response_deserializer=redislite__pb2.SetReply.FromString,
+                '/redisgrpc.RedisGrpcServer/Set',
+                request_serializer=redisgrpc__pb2.SetRequest.SerializeToString,
+                response_deserializer=redisgrpc__pb2.SetReply.FromString,
                 )
         self.Get = channel.unary_unary(
-                '/redislite.RedisLiteServer/Get',
-                request_serializer=redislite__pb2.GetRequest.SerializeToString,
-                response_deserializer=redislite__pb2.GetReply.FromString,
+                '/redisgrpc.RedisGrpcServer/Get',
+                request_serializer=redisgrpc__pb2.GetRequest.SerializeToString,
+                response_deserializer=redisgrpc__pb2.GetReply.FromString,
                 )
 
 
-class RedisLiteServerServicer(object):
-    """The greeting service definition.
-    service Greeter {
-    // Sends a greeting
-    rpc SayHello (HelloRequest) returns (HelloReply) {}
-    // Sends another greeting
-    rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
-    }
-
-    """
+class RedisGrpcServerServicer(object):
+    """Missing associated documentation comment in .proto file."""
 
     def InitConnection(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -69,40 +53,32 @@ class RedisLiteServerServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_RedisLiteServerServicer_to_server(servicer, server):
+def add_RedisGrpcServerServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'InitConnection': grpc.unary_unary_rpc_method_handler(
                     servicer.InitConnection,
-                    request_deserializer=redislite__pb2.InitRequest.FromString,
-                    response_serializer=redislite__pb2.InitReply.SerializeToString,
+                    request_deserializer=redisgrpc__pb2.InitRequest.FromString,
+                    response_serializer=redisgrpc__pb2.InitReply.SerializeToString,
             ),
             'Set': grpc.unary_unary_rpc_method_handler(
                     servicer.Set,
-                    request_deserializer=redislite__pb2.SetRequest.FromString,
-                    response_serializer=redislite__pb2.SetReply.SerializeToString,
+                    request_deserializer=redisgrpc__pb2.SetRequest.FromString,
+                    response_serializer=redisgrpc__pb2.SetReply.SerializeToString,
             ),
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
-                    request_deserializer=redislite__pb2.GetRequest.FromString,
-                    response_serializer=redislite__pb2.GetReply.SerializeToString,
+                    request_deserializer=redisgrpc__pb2.GetRequest.FromString,
+                    response_serializer=redisgrpc__pb2.GetReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'redislite.RedisLiteServer', rpc_method_handlers)
+            'redisgrpc.RedisGrpcServer', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class RedisLiteServer(object):
-    """The greeting service definition.
-    service Greeter {
-    // Sends a greeting
-    rpc SayHello (HelloRequest) returns (HelloReply) {}
-    // Sends another greeting
-    rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
-    }
-
-    """
+class RedisGrpcServer(object):
+    """Missing associated documentation comment in .proto file."""
 
     @staticmethod
     def InitConnection(request,
@@ -115,9 +91,9 @@ class RedisLiteServer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/redislite.RedisLiteServer/InitConnection',
-            redislite__pb2.InitRequest.SerializeToString,
-            redislite__pb2.InitReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/redisgrpc.RedisGrpcServer/InitConnection',
+            redisgrpc__pb2.InitRequest.SerializeToString,
+            redisgrpc__pb2.InitReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -132,9 +108,9 @@ class RedisLiteServer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/redislite.RedisLiteServer/Set',
-            redislite__pb2.SetRequest.SerializeToString,
-            redislite__pb2.SetReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/redisgrpc.RedisGrpcServer/Set',
+            redisgrpc__pb2.SetRequest.SerializeToString,
+            redisgrpc__pb2.SetReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -149,8 +125,8 @@ class RedisLiteServer(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/redislite.RedisLiteServer/Get',
-            redislite__pb2.GetRequest.SerializeToString,
-            redislite__pb2.GetReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/redisgrpc.RedisGrpcServer/Get',
+            redisgrpc__pb2.GetRequest.SerializeToString,
+            redisgrpc__pb2.GetReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

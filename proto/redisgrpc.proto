@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package redisgrpc;
+
+
+service RedisGrpcServer{
+  rpc InitConnection(InitRequest) returns (InitReply){};
+  rpc Set(SetRequest) returns (SetReply) {};
+  rpc Get(GetRequest) returns (GetReply) {};
+  //rpc IsKey(GetRequest) returns (GetReply) {};
+}
+
+// The request message containing the user's name.
+message InitRequest {
+   string connection_id = 1;
+}
+
+// The response message containing the greetings
+message InitReply {
+   string status = 1;
+}
+
+// The request message containing the user's name.
+message SetRequest{
+  string key = 1;
+  string value = 2;
+}
+
+// The response message containing the greetings
+message SetReply {
+  string status = 1;
+}
+
+// The request message containing the user's name.
+message GetRequest{
+  string key = 1;
+}
+
+// The response message containing the greetings
+message GetReply {
+  string status = 1;
+  string value = 2;
+}

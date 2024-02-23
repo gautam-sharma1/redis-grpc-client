@@ -29,7 +29,7 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setup(
-    name='redislightning',
+    name='redisgrpc',
     version='0.2',
     packages=find_packages(),
     description='A small production ready client library that emulates redis and used gRPC for communication',
@@ -41,7 +41,7 @@ setup(
     long_description_content_type='text/markdown',
     keywords=['redis', 'gRPC'],
     author_email='gautamsharma2813@gmail.com',
-    url='https://github.com/gautam-sharma1/redislightning',
+    url='https://github.com/gautam-sharma1/redisgrpc',
     classifiers=[
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',

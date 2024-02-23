@@ -25,7 +25,7 @@
 # Import necessary modules/classes from your package
 
 # Optionally, you can define __all__ to specify what gets imported when using 'from package import *'
-__all__ = ['redislightning.py']
+__all__ = ['redisgrpc.py']
 
 # Optionally, if you want to specify the version of your package
 __version__ = '1.0.0'
