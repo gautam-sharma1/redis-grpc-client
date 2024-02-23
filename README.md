@@ -18,7 +18,7 @@ Redis gRPC ⚡️ is a client library that emulates Redis-like features by lever
 To install the redisgrpc Python client library, you can use pip:
 
 ```bash
-pip install  redisgrpc==0.3
+pip install  redisgrpc==0.4
 ```
 
 ## Usage
@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
 ## About
 
-The redisgrpc-server is a library written purely in C++, utilizing gRPC as its communication layer. Despite its small size, this library is powerful and suitable for use in production environments. The aim is to provide developers with the best possible experience while maintaining extreme speed and efficiency.
+The [redis-grpc-server](https://github.com/gautam-sharma1/redis-grpc-server) is a library written purely in C++, utilizing gRPC as its communication layer. Despite its small size, this library is powerful and suitable for use in production environments. The aim is to provide developers with the best possible experience while maintaining extreme speed and efficiency.
 
 ## Contributing
 

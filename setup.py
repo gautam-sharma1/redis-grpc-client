@@ -30,7 +30,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='redisgrpc',
-    version='0.3',
+    version='0.4',
     packages=find_packages(),
     description='A small production ready client library that emulates redis and used gRPC for communication',
     author='Gautam Sharma',
